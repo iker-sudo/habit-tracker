@@ -27,9 +27,9 @@ button {
   font-size: inherit;
 }
 
-input {
+input, textarea {
   font-family: inherit;
-  font-size: inherit;
+  font-size: 16px;
 }
 
 /* ── App Layout ──────────────────────────────────────── */
