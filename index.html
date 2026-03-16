@@ -22,5 +22,18 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Restaurar el zoom al perder el foco en inputs/textareas
+      function restoreViewport() {
+        // Para Safari/iOS, forzar el scroll al top y resetear el viewport
+        window.scrollTo(0, 0);
+        document.body.style.zoom = "";
+      }
+      document.addEventListener('blur', function(e) {
+        if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) {
+          setTimeout(restoreViewport, 100);
+        }
+      }, true);
+    </script>
   </body>
 </html>
